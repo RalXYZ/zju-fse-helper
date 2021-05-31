@@ -1,11 +1,13 @@
-# Fuck ZJU FSE Course
+# ZJU FSE Course Helper
 
-Zhejiang University *Fundamentals of Software Engineering* course problem library for reviewing. 
+Zhejiang University *Fundamentals of Software Engineering* course problem library for reviewing.  
+
+![Project Screenshot](https://i.loli.net/2021/05/31/bEqvCk8YyLHXiP3.png)
+
 
 # What can this script do
 1. Look up the answer of any problem in the problem library.  
 2. Quiz on a specific chapter.  
-3. Quiz on your previous mistakes. (Will implement in the future)
 
 # How to use
 
