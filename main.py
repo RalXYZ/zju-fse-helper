@@ -24,25 +24,39 @@ def judge(problem_list, requested_desc: str):
     print(f"{bcolors.FAIL}Not Found{bcolors.ENDC}")
 
 
-def review_problem(problem):
-    print(problem['topic'])
-    for i in problem['options']:
-        print(i)
-    answer = input("Please fill in your answer: ")
-    if answer.lower() == problem['answer'].lower():
-        print(f"{bcolors.OKGREEN}Correct!{bcolors.ENDC}")
-    else:
-        print(f"{bcolors.FAIL}Not correct. Correct answer: {problem['answer']}{bcolors.ENDC}")
-    print('')
+def list_problem():
+	chapter = input("Please choose the chapter: ")
+	for i in problem_list[chapter]:
+		print(i['topic'])
+		for j in i['options']:
+			if i['answer'] == j[:1]:
+				print(f"{bcolors.OKGREEN}{j}{bcolors.ENDC}")
+			else: 
+				print(j)
+		print('')
+
+
+def review_problem():
+	chapter = input("Please choose the chapter: ")
+	for i in problem_list[chapter]:
+		print(i['topic'])
+		for j in i['options']:
+			print(j)
+		answer = input("Please fill in your answer: ")
+		if answer.lower() == i['answer'].lower():
+			print(f"{bcolors.OKGREEN}Correct!{bcolors.ENDC}")
+		else:
+			print(f"{bcolors.FAIL}Not correct. Correct answer: {i['answer']}{bcolors.ENDC}")
+		print('')
 
 
 with open('problem_list.json') as f:
     problem_list = json.load(f)
-    command = input("Welcome to this project. Please choose [R]eview, [C]heck_problem: ")
+    command = input("Welcome to this project. \nPlease choose [R]eview, [C]heck_problem, [L]ist_problem: ")
     if command == 'R' or command == 'r':
-        chapter = input("Please choose the chapter: ")
-        for i in problem_list[chapter]:
-            review_problem(i)
+        review_problem()
+    elif command == 'L' or command == 'l':
+    	list_problem()
     elif command == 'C' or command == 'c':
         while True:
         	requested_desc = input("Paste your problem description here: ")
