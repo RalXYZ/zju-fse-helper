@@ -8,6 +8,8 @@ Zhejiang University *Fundamentals of Software Engineering* course problem librar
 # What can this script do
 1. Look up the answer of any problem in the problem library.  
 2. Quiz on a specific chapter.  
+3. List all problems in a specific chapter.  
+4. Shuffle through the entire problem library.  
 
 # How to use
 
